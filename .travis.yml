@@ -25,16 +25,16 @@ after_success:
   - docker push codeballet/multi-docker-server
   - docker push codeballet/multi-docker-worker
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "multi-docker"
-  env: "MultiDocker-env"
-  bucket_name: "elasticbeanstalk-us-east-1-442971121200"
-  bucket_path: "multi-docker"
-  on:
-    branch: master
-  access_key_id:
-    secure: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_ACCESS_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-east-1"
+#   app: "multi-docker"
+#   env: "MultiDocker-env"
+#   bucket_name: "elasticbeanstalk-us-east-1-442971121200"
+#   bucket_path: "multi-docker"
+#   on:
+#     branch: master
+#   access_key_id:
+#     secure: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: $AWS_SECRET_ACCESS_KEY
