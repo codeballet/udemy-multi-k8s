@@ -12,6 +12,13 @@ spec:
       labels:
         component: server
     spec:
+      initContainers:
+        - name: check-db-ready
+          image: postgres
+          command: ['sh', 'c',
+            'until pg_isready -h postgres-cluster-ip-service
+            do echo waiting for database;
+            sleep 2; done;']
       containers:
         - name: server
           image: codeballet/multi-docker-server
