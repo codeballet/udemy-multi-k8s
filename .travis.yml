@@ -19,7 +19,7 @@ before_install:
 
 
 script:
-  - docker run -e CI=true codeballet/docker-react npm run test
+  - docker run -e CI=true codeballet/react-test npm run test
 
 deploy:
   provider: script
